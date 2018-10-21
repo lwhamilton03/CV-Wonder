@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { Container, Row, Col, Input, Button } from "reactstrap";
+import {
+  Form,
+  FormGroup,
+  ControlLabel,
+  FormControl,
+  Checkbox,
+  Container,
+  Row,
+  Col,
+  Input,
+  Button
+} from "react-bootstrap";
 
 class Login extends Component {
   state = {
@@ -55,29 +66,74 @@ class Login extends Component {
     }
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Email:
-          <input
-            className="form-control"
-            id="email"
-            type="email"
-            value={this.state.value}
-            onChange={this.handleEmailChange}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            className="form-control"
-            id="password"
-            type="password"
-            value={this.state.value}
-            onChange={this.handlePassChange}
-          />
-        </label>
-        <input className="btn btn-primary m-2" type="submit" value="Submit" />
-      </form>
+      //   <form onSubmit={this.handleSubmit}>
+      //     <label>
+      //       Email:
+      //       <input
+      //         className="form-control"
+      //         id="email"
+      //         type="email"
+      //         value={this.state.value}
+      //         onChange={this.handleEmailChange}
+      //       />
+      //     </label>
+      //     <label>
+      //       Password:
+      //       <input
+      //         className="form-control"
+      //         id="password"
+      //         type="password"
+      //         value={this.state.value}
+      //         onChange={this.handlePassChange}
+      //       />
+      //     </label>
+      //     <input className="btn btn-primary m-2" type="submit" value="Submit" />
+      //   </form>
+      // );
+
+      <Form horizontal onSubmit={this.handleSubmit}>
+        <FormGroup controlId="formHorizontalEmail">
+          <Col componentClass={ControlLabel} sm={2}>
+            Email
+          </Col>
+          <Col sm={10}>
+            <FormControl
+              id="email"
+              value={this.state.value}
+              onChange={this.handleEmailChange}
+              type="email"
+              placeholder="Email"
+            />
+          </Col>
+        </FormGroup>
+
+        <FormGroup controlId="formHorizontalPassword">
+          <Col componentClass={ControlLabel} sm={2}>
+            Password
+          </Col>
+          <Col sm={10}>
+            <FormControl
+              id="password"
+              value={this.state.value}
+              onChange={this.handlePassChange}
+              type="password"
+              placeholder="Password"
+            />
+          </Col>
+        </FormGroup>
+
+        <FormGroup>
+          <Col smOffset={2} sm={10}>
+            {/* <Checkbox>Remember me</Checkbox> */}
+          </Col>
+        </FormGroup>
+
+        <FormGroup>
+          <Col smOffset={2} sm={10}>
+            <Button type="submit">Sign in</Button>
+          </Col>
+        </FormGroup>
+      </Form>
     );
   }
 }
