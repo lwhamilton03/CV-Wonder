@@ -53,13 +53,13 @@ class TraineeTable extends Component {
               function(item, key) {
                 return (
                   <tr onClick={this.sendClick} key={key}>
-                    <td>{item.name}</td>
-                    <td>{item.email}</td>
-                    <td>
+                    <td className={item.email}>{item.name}</td>
+                    <td className={item.email}>{item.email}</td>
+                    <td className={item.email}>
                       <Button className="button">Download</Button>
                     </td>
-                    <td>{item.state}</td>
-                    <td>
+                    <td className={item.email}>{item.state}</td>
+                    <td className={item.email}>
                       <Button className="button">
                         Flag
                         <img

@@ -26,7 +26,8 @@ class TrainerPage extends Component {
   // }
 
   handleClick = e => {
-    let email = e.target.innerHTML;
+    let email = e.target.className;
+    console.log(e.target.name);
     let request = new XMLHttpRequest();
     request.open("GET", "http://localhost:8090/api/people");
     request.setRequestHeader("Content-Type", "application/json");
@@ -36,7 +37,7 @@ class TrainerPage extends Component {
 
     request.onload = () => {
       for (var i = 0; i < request.response.length; i++) {
-        console.log(request.response[i].email);
+        // console.log(request.response[i].email);
         if (request.response[i].email == email) {
           this.setState({ selectedId: request.response[i].id });
         }
@@ -45,7 +46,7 @@ class TrainerPage extends Component {
   };
 
   render() {
-    console.log(JSON.stringify(this.state.allPeople));
+    // console.log(JSON.stringify(this.state.allPeople));
     return (
       <div className="TrainerPage">
         <NavbarFeatures
