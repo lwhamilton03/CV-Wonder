@@ -17,7 +17,7 @@ class TraineeTable extends Component {
   componentDidMount() {
     let request = new XMLHttpRequest();
 
-    request.open("GET", "http://localhost:8090/api/people");
+    request.open("GET", "http://192.168.1.117:8090/api/people");
 
     request.setRequestHeader("Content-Type", "application/json");
 

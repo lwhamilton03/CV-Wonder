@@ -12,7 +12,7 @@ class ProfilePage extends Component {
   componentDidMount() {
     let request = new XMLHttpRequest();
 
-    request.open("GET", "http://localhost:8090/api/people");
+    request.open("GET", "http://192.168.1.117:8090/api/people");
 
     request.setRequestHeader("Content-Type", "application/json");
 
@@ -45,7 +45,7 @@ class ProfilePage extends Component {
                     <td width="12.5%">
                       <div>
                         <img
-                          src="https://files.ontario.ca/small-biz-advice.png"
+                          src={require("C:/Users/Admin/Documents/Lucy Hamilton/CVWonderFront/src/profilePics/Melvin.jpeg")}
                           class="img-rounded"
                           height="200px"
                           width="200px"
